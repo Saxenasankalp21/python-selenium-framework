@@ -1,0 +1,9 @@
+{
+  "test1": {
+    "tickername": "MSFT"
+  },
+
+  "test2": {
+    "tickername": "TSLA"
+  }
+}

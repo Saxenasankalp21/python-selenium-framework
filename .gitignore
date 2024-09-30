@@ -1,0 +1,7 @@
+-- INSERT -
+
+.screenshots/
+.idea/
+*.log
+*__pycache__
+.pytest_cache/

@@ -1,0 +1,16 @@
+cd : to the project path
+git status :  to check the project status
+git init : It will initialize the folder as git repo
+git add -A :  to add project ALL files at once to git repo in staging env (git initialise) to track untrack files
+git reset : to move the files out of the staging area again
+touch .gitignore : it will create gitignore file to put the folder files which is not required to track or add to stating
+ls -la : the gitingore file will be available there now by the name .gitignore
+we can ignore .log, pycache and .idea
+
+to edit the gitignore file from terminal we use  vi .gitignore
+to get back  : first press esc and type ':x' and hit enter
+
+
+
+
+
