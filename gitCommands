@@ -10,6 +10,9 @@ we can ignore .log, pycache and .idea
 to edit the gitignore file from terminal we use  vi .gitignore
 to get back  : first press esc and type ':x' and hit enter
 
+if we want to commit to local repo
+git commit -m "This is my first commit, any comments here"
+
 
 
 
