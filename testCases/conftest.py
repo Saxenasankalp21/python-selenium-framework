@@ -3,12 +3,9 @@ import time
 import pytest
 from selenium.webdriver.chrome import webdriver
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.wait import WebDriverWait
 from utilities.utils import Utils
-
 driver = None
+
 
 @pytest.fixture(scope="session", autouse=True)
 def setup(request, browser):
@@ -35,25 +32,9 @@ def setup(request, browser):
     log.info("Browser open and maximized")
 
     try:
-        driver.get("https://www.benzinga.com/login?action=login&next=https%3A%2F%2Fwww.benzinga.com%2F&utm_source=homepage")
+        driver.get("#URL HERE")
         driver.implicitly_wait(40)
-        wait = WebDriverWait(driver, 40)
-        wait.until(EC.presence_of_element_located((By.ID, "email"))).click()
-        username = driver.find_element(By.ID, "email").send_keys("sankalpsaxena@benzinga.com")
-        log.info(f"Username entered : {username}")
-        driver.find_element(By.ID, "current-password").send_keys("Wisdom21#")
-        log.info("password entered")
-
-        # click on login button
-        driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div/div/div/div/div[3]/form/div[3]/button").click()
-        log.info("login button clicked")
-
-        # click on benzinga.com link
-        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "a.sc-hhTLmD"))).click()
-        curl = driver.current_url
-        log.info(f"Landed to url: {curl} ")
-        assert curl == "https://www.benzinga.com/"
-        log.info("url is correct")
+        #Your common code here
     except Exception as e:
         log.error(f"Exception is : {e} Login or Landing to Benzinga platform has been failed please check!!")
         driver.quit()
@@ -85,7 +66,7 @@ def pytest_runtest_makereport(item):
     extra = getattr(report, "extra", [])
     if report.when == "call":
         # always add url to report
-        extra.append(pytest_html.extras.url("https://www.benzinga.com/"))
+        extra.append(pytest_html.extras.url("projecturl.com"))
         xfail = hasattr(report, "wasxfail")
         if (report.skipped and xfail) or (report.failed and not xfail):
             # only add additional html on failure
@@ -101,4 +82,4 @@ def pytest_runtest_makereport(item):
         report.extra = extra
 
 def pytest_html_report_title(report):
-    report.title = "Benzinga.Com"
+    report.title = "ReportTitleHere"
