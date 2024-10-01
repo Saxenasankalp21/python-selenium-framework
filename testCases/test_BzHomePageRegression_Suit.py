@@ -19,12 +19,12 @@ class TestBzHomePage(softest.TestCase):
     def test_BZ_landing(self):
         self.bzHomePage.verify_landing()
 
-    @pytest.mark.skip("later")
+    #@pytest.mark.skip("later")
     @pytest.mark.order(3)
     def test_BZ_Menu_List1_Header(self):
         self.bzHomePage.verify_header_menu_list1()
 
-    @pytest.mark.skip("later")
+    #@pytest.mark.skip("later")
     @pytest.mark.order(4)
     def test_BZ_Menu_List2_Header(self):
         self.bzHomePage.verify_header_menu_list2()
@@ -36,7 +36,7 @@ class TestBzHomePage(softest.TestCase):
         self.bzHomePage.verify_ticker_search_input(tickername)
         self.bzQuotePage.verify_quote_page_url()
 
-    @pytest.mark.skip("later")
+    #@pytest.mark.skip("later")
     @pytest.mark.order(1)
     def test_BZ_Footer(self):
         self.bzHomePage.verify_bz_footer_logo()
