@@ -68,7 +68,7 @@ def setup(request, browser):
 
 
     yield
-   #driver.close()
+    driver.close()
 
 def pytest_addoption(parser):
     parser.addoption("--browser")
