@@ -12,7 +12,8 @@ class BenzingaQuotePage(BaseDriver):
         self.driver = driver
 
     #locators
-    TICKER_NAME = "span[class='text-bzgray-900 py-0.5 px-2.5 rounded-full border border-bzblue-400 mr-2']"
+    TICKER_NAME = "div[class*='quote-exchange-information'] span[class*='border border-bzblue']"
+
 
 
     def get_ticker_name(self):
